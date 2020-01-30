@@ -1,3 +1,7 @@
+//add document ready! 
+
+
+
 // DATE CREATION
 let today = new Date (); // set a variable declaring the existence of a date
 // declare variables for a year, month, and day
@@ -10,10 +14,11 @@ $textbox.value =
 // 
 
 //HOUR SAVE FEATURE 
-$saveBtn = $('.savebtn'); // first, declare a variable that calls all the buttons under the save-btn class
+$saveBtn = $('.save-btn'); // first, declare a variable that calls all the buttons under the save-btn class
+$saveInput = $('#user-input')
  // next, create an on click function 
-$saveBtn.on('click', function() { 
-    
-});
+$saveBtn.on('click', function() {
+        
+ // you will need localstorage to save THE TEXT BOX INPUT these features   
 
-// you will need localstorage to save these features
+
