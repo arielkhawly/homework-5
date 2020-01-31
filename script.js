@@ -1,24 +1,26 @@
-//add document ready! 
+$(document).ready(function () {
+    // DATE CREATION
+    let today = new Date(); // set a variable declaring the existence of a date
+    // declare variables for a year, month, and day
+    document.getElementById('date').innerHTML = today;// put the date into the calendar
 
+    $('.hour').each(function () { // set event listener, 
+        // 1. check localstorage for the value for each hour
+        let keyName = $(this).children('.hour-btn').text();
+        var everyInput = JSON.parse(localStorage.getItem('.user-input'));// put JSON here
+        console.log(everyInput)
+        // if it has it, load it into the input
+        if (everyInput !== null) {
+            $(this).children('.user-input').val(everyInput);
+        }
 
+        // 2. Assign the color based on current time
 
-// DATE CREATION
-let today = new Date (); // set a variable declaring the existence of a date
-// declare variables for a year, month, and day
-document.getElementById('date').innerHTML = today;// put the date into the calendar
+        // 3. event listener
+        let $saveBtn = $(this).children('.save-btn');
+        $saveBtn.on('click', function () {
+            localStorage.setItem(keyName, JSON.stringify(everyInput));// change to 2nd JSON
 
-//HOUR TEXT BOX CREATION
-let $textbox = $('.textbox') // create a jquery variable that accounts for the class of all the hour textboxes
-$textbox.value = 
-// set a value input for this variable, make sure it allows for user input 
-// 
-
-//HOUR SAVE FEATURE 
-$saveBtn = $('.save-btn'); // first, declare a variable that calls all the buttons under the save-btn class
-$saveInput = $('#user-input')
- // next, create an on click function 
-$saveBtn.on('click', function() {
-        
- // you will need localstorage to save THE TEXT BOX INPUT these features   
-
-
+        });
+    })
+});
