@@ -1,0 +1,18 @@
+#heading, .schedule {
+    font-family: 'Oswald', sans-serif;
+    ;
+}
+#heading {
+    font-weight: 700;
+    text-align: center;
+}
+.schedule {
+    margin-right: 100px;
+    margin-left: 250px;
+    padding: 100px;
+}
+.user-input {
+    text-align: left;
+    height: 50px;
+    width: 700px;
+}
