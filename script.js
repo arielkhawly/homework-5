@@ -5,7 +5,7 @@ $(document).ready(function () {
     // saving user inputs  
     $('.hour').each(function () { // set event listener, 
         // check localstorage for the value for each hour
-        let keyName = $(this).children('.hour-btn').text();
+        let keyName = $(this).children('.hour-name').text();
         console.log(keyName);
         let everyInput = localStorage.getItem(keyName);
         console.log(everyInput)

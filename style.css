@@ -7,14 +7,22 @@
     text-align: center;
 }
 .schedule {
-    margin-right: 100px;
-    margin-left: 250px;
+    margin-right: 200px;
+    margin-left: 150px;
     padding: 100px;
+}
+.hour {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.hour-name {
+    margin-right: auto;
 }
 .user-input {
     text-align: left;
     height: 50px;
-    width: 700px;
+    width: 750px;
 }
 .current-hour {
     background-color: lime;
