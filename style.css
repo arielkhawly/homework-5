@@ -16,3 +16,12 @@
     height: 50px;
     width: 700px;
 }
+.current-hour {
+    background-color: lime;
+}
+.past-hour {
+    background-color: tomato;
+}
+.future-hour {
+    background-color: lightgrey;
+}
