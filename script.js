@@ -7,22 +7,22 @@ $(document).ready(function () {
         // 1. check localstorage for the value for each hour
         let keyName = $(this).children('.hour-btn').text();
         console.log(keyName);
-        let everyInput = JSON.parse(localStorage.getItem(keyName));// put JSON here
+        let everyInput = localStorage.getItem(keyName);// put JSON here
         console.log(everyInput)
         // if it has it, load it into the input
         if (everyInput !== null) {
-            $(this).children('.user-input').val(everyInput);
+            $('.user-input', this).val(everyInput); //
         }
 
         // 2. Assign the color based on current time (gethour) need 3 conditionals: past, present, future
         let currentHour = today.getHours() // this is in military time 
         let hourData = $(this).data('hour');
         if (currentHour === hourData)
-            $(this).children('.user-input').addClass('current-hour');
+            $('.user-input', this).addClass('current-hour');
         else if (currentHour > hourData)
-            $(this).children('.user-input').addClass('past-hour');
+            $('.user-input', this).addClass('past-hour');
         else if (currentHour < hourData)
-        $(this).children('.user-input').addClass('future-hour');
+            $('.user-input', this).addClass('future-hour');
 
 
 
@@ -30,9 +30,9 @@ $(document).ready(function () {
 
         // 3. event listener
         let $saveBtn = $(this).children('.save-btn');
-        $saveBtn.on('click', function () {
-            let hourlyValue = $(this).children('.user-input').val(); // keep this variable inside, because it will pull the val ON the click
-            localStorage.setItem(keyName, JSON.stringify(hourlyValue));// change to 2nd JSON
+        $saveBtn.on('click', () => { //arrow changes the scope of the this keyword
+            let hourlyValue = $('.user-input', this).val(); // keep this variable inside, because it will pull the val ON the click
+            localStorage.setItem(keyName,hourlyValue);// change to 2nd JSON
 
         });
     })
