@@ -3,11 +3,12 @@ $(document).ready(function () {
     let today = new Date(); // set a variable declaring the existence of a date
     // declare variables for a year, month, and day
     document.getElementById('date').innerHTML = today;// put the date into the calendar
-
+// SAVING AND COLOR 
     $('.hour').each(function () { // set event listener, 
         // 1. check localstorage for the value for each hour
-        let keyName = $(this).children('.hour-btn').text();
-        var everyInput = JSON.parse(localStorage.getItem('.user-input'));// put JSON here
+        let keyName = $(this).children('.hour-btn').text();  
+        console.log(keyName);
+        let everyInput = JSON.parse(localStorage.getItem(keyName));// put JSON here
         console.log(everyInput)
         // if it has it, load it into the input
         if (everyInput !== null) {
@@ -18,8 +19,9 @@ $(document).ready(function () {
 
         // 3. event listener
         let $saveBtn = $(this).children('.save-btn');
+        let hourlyValue = $(this).children('.user-input').val();
         $saveBtn.on('click', function () {
-            localStorage.setItem(keyName, JSON.stringify(everyInput));// change to 2nd JSON
+            localStorage.setItem(keyName, JSON.stringify(hourlyValue));// change to 2nd JSON
 
         });
     })
