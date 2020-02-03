@@ -1,1 +1,2 @@
 # homework-5
+For this homework, I first created html with respective classes that marked the header, date, hours, input boxes, and save buttons. Then, in jS, I used moment.js to set up the time. Furthering the connection to moment, I created if and if else conditions that would correspond to the time and color code the hours based on past, present, and future. Finally, I set up localstorage to save my hour inputs in connection to the save button. 
